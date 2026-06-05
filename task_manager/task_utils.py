@@ -10,11 +10,12 @@ tasks = []
 
 # Implement add_task function
 def add_task(title, description, due_date):
-    if not (
+    try:
         validate_task_title(title)
-        and validate_task_description(description)
-        and validate_due_date(due_date)
-    ):
+        validate_task_description(description)
+        validate_due_date(due_date)
+    except ValueError as error:
+        print(error)
         print("Task was not added.")
         return False
 
@@ -65,5 +66,4 @@ def calculate_progress(tasks=tasks):
         completed_tasks = sum(1 for task in tasks if task["completed"])
         progress = (completed_tasks / len(tasks)) * 100
 
-    print(f"Progress: {progress:.2f}%")
     return progress
