@@ -1,9 +1,26 @@
-def calculate_progress(tasks):
-    if not tasks:
-        print("0.0")
-        return 0.0
+from datetime import datetime
+
+# Import validation functions
+None
+
+# Define tasks list
+tasks = []
+
+# Implement add_task function
+def add_task(title, description, due_date):
+    None
+    print("Task added successfully!")
     
-    # Matches the autograder test input structure
-    completed_count = sum(1 for task in tasks if task.get('completed') == True)
-    percentage = (completed_count / len(tasks)) * 100
-    return percentage
+# Implement mark_task_as_complete function
+def mark_task_as_complete(index, tasks=tasks):
+    None
+    print("Task marked as complete!")
+    
+# Implement view_pending_tasks function
+def view_pending_tasks(tasks=tasks):
+    None
+
+# Implement calculate_progress function
+def calculate_progress(tasks=tasks):
+    None
+    return progress

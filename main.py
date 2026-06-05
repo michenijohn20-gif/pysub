@@ -1,56 +1,27 @@
-from task_manager.validation import validate_non_empty_input, validate_date
-from task_manager.task_utils import calculate_progress
+# Import functions from task_manager.task_utils package
+None
 
-tasks_list = []
-
-def add_task():
-    title = validate_non_empty_input("Enter task title: ")
-    description = validate_non_empty_input("Enter task description: ")
-    due_date = validate_date("Enter due date (YYYY-MM-DD): ")
-    
-    tasks_list.append({
-        'title': title,
-        'description': description,
-        'due_date': due_date,
-        'completed': False
-    })
-    print("Task added successfully!")
-
-def view_pending_tasks():
-    # Test expects clean/no error output when empty, or standard prints
-    for task in tasks_list:
-        if not task['completed']:
-            print(f"Title: {task['title']} | Due: {task['due_date']}")
-
-def mark_task_complete():
-    # Based on test input 2 (view pending) then 1 (select index/ID)
-    view_pending_tasks()
-    try:
-        idx = int(input("Enter task index to complete: ")) - 1
-        if 0 <= idx < len(tasks_list):
-            tasks_list[idx]['completed'] = True
-            print("Task marked as complete!")
-    except (ValueError, IndexError):
-        print("Invalid selection.")
-
-def show_progress():
-    progress = calculate_progress(tasks_list)
-    print(f"{progress:.1f}")
-
+# Define the main function
 def main():
     while True:
-        # Menu options map to the autograder's inputs: 1=Add, 2=Complete, 3=Pending, 5=Exit
-        choice = input("1. Add | 2. Complete | 3. Pending | 4. Progress | 5. Exit\n")
-        if choice == '1':
-            add_task()
-        elif choice == '2':
-            mark_task_complete()
-        elif choice == '3':
-            view_pending_tasks()
-        elif choice == '4':
-            show_progress()
-        elif choice == '5':
-            break
+        print("Task Management System")
+        print("1. Add Task")
+        print("2. Mark Task as Complete")
+        print("3. View Pending Tasks")
+        print("4. View Progress")
+        print("5. Exit")
+        choice = input("Enter your choice (1-5): ")
 
+        if choice == "1":
+            None
+        None
+        None
+        None
+        elif choice == "5":
+            print("Exiting the program...")
+            break
+        else:
+            print("Invalid choice. Please try again.")
+        
 if __name__ == "__main__":
     main()
